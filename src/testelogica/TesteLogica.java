@@ -13,8 +13,13 @@ public class TesteLogica {
         
         //Exercicio02
         int[] a = {1,2,3,4,5};
+        //System.out.print(somaDeQuadrados(a));
         
-        System.out.print(somaDeQuadrados(a));
+        //Exercicio03
+        System.out.print(fibonacci());
+        
+        
+        
     }
     
     private static void imprimeNumero(){
@@ -37,6 +42,27 @@ public class TesteLogica {
         }
         
         return soma;
+    }
+    
+    
+    private static int fibonacci() {
+        int f1, f2, aux, fibonacci;
+        fibonacci = f1 = f2 = 1;
+        float div;
+        int i = 0;
+        boolean roof = false;
+        
+        while(!roof){
+            fibonacci = f1 + f2;
+            aux = f2;
+            f1 = f2;
+            f2 = fibonacci;
+            div = fibonacci / 10000;
+            if(div >= 1){
+                roof = true;
+            }
+        }
+        return fibonacci;
     }
     
 }
