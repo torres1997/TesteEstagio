@@ -4,6 +4,7 @@ package testelogica;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import arvore.Arvore;
 /**
  *
  * @author Luiz Torres
@@ -22,11 +23,22 @@ public class TesteLogica {
         //Exercicio03
         //System.out.print(fibonacci());
         
+        //Exercicio04
+        printArvore();
         //Exercicio05
-        System.out.print(palavraTriangulo("SKY"));
+        //System.out.print(palavraTriangulo("SKY"));
         
     }
     
+    private static void printArvore(){
+        //int[] caminho = caminho_Arvore(criaArvore(), 6);
+        int[] caminho = Arvore.caminho_Arvore(Arvore.criaArvore(), 6);
+        System.out.printf("[");
+        for(int i: caminho){
+            System.out.printf(" %d ", i);
+       }
+        System.out.printf("]");
+    }
     private static void imprimeNumero(){
         
         for(int i = 1; i<=100; i++){
@@ -54,7 +66,6 @@ public class TesteLogica {
         int f1, f2, aux, fibonacci;
         fibonacci = f1 = f2 = 1;
         float div;
-        int i = 0;
         boolean roof = false;
         
         while(!roof){
@@ -73,7 +84,7 @@ public class TesteLogica {
     
    private static int palavraTriangulo(String s){
        Map map = new HashMap();  
-        //Adding elements to map  
+        //Adicionando elementos no map
         map.put('A',1);  
         map.put('B',2);  
         map.put('C',3);  
@@ -103,7 +114,6 @@ public class TesteLogica {
         
         int soma = 0;
         for (int i = 0; i < s.length(); i++) {
-          //System.out.println(map.get(s.charAt(i)));
           if(map.containsKey(s.charAt(i))){
               soma += (int)map.get(s.charAt(i));
           }
