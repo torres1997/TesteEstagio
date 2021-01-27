@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import arvore.Arvore;
+import java.util.Scanner;
+
 /**
  *
  * @author Luiz Torres
@@ -12,33 +14,49 @@ import arvore.Arvore;
 public class TesteLogica {
 
     public static void main(String[] args) {
+        int escolha =1;
+        
+        while(escolha != 0){
+            System.out.print("\nEscolha um dos exercicios de 1 a 5 ou digite 0 para sair:");
+            
+            Scanner leitor = new Scanner(System.in);
+            escolha = leitor.nextInt();
+        
+            switch (escolha){
+                case 1: //Exercicio01
+                    imprimeNumero();
+                    break;
+                case 2: //Exercicio02
+                    int[] a = {1,2,3,4,5};
+                    System.out.print(somaDeQuadrados(a));
+                    break;
+                case 3: //Exercicio03
+                    System.out.print(fibonacci());
+                    break;
+                case 4: //Exercicio04
+                    printArvore();
+                    break;
+                case 5: //Exercicio05
+                    
+                    System.out.print(palavraTriangulo("SKY"));
+                    break;
 
-        //Exercicio01
-        //imprimeNumero();
-        
-        //Exercicio02
-        int[] a = {1,2,3,4,5};
-        //System.out.print(somaDeQuadrados(a));
-        
-        //Exercicio03
-        //System.out.print(fibonacci());
-        
-        //Exercicio04
-        printArvore();
-        //Exercicio05
-        //System.out.print(palavraTriangulo("SKY"));
-        
+            }
+            
+        }
     }
     
     private static void printArvore(){
         //int[] caminho = caminho_Arvore(criaArvore(), 6);
         int[] caminho = Arvore.caminho_Arvore(Arvore.criaArvore(), 6);
+        System.out.printf("Buscando o elemento 6: ");
         System.out.printf("[");
         for(int i: caminho){
             System.out.printf(" %d ", i);
        }
         System.out.printf("]");
     }
+    
     private static void imprimeNumero(){
         
         for(int i = 1; i<=100; i++){
@@ -50,7 +68,6 @@ public class TesteLogica {
         }
     }
 
-    
     private static int somaDeQuadrados(int[] a) {
         int soma = 0;
         
@@ -60,7 +77,6 @@ public class TesteLogica {
         
         return soma;
     }
-    
     
     private static int fibonacci() {
         int f1, f2, aux, fibonacci;
@@ -81,8 +97,7 @@ public class TesteLogica {
         return fibonacci;
     }
     
-    
-   private static int palavraTriangulo(String s){
+    private static int palavraTriangulo(String s){
        Map map = new HashMap();  
         //Adicionando elementos no map
         map.put('A',1);  

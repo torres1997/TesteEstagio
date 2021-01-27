@@ -8,15 +8,6 @@ import java.util.Stack;
  */
 public class Arvore {
     
-    //public static void main(String[] args) {
-    //    int[] caminho = caminho_Arvore(criaArvore(), 6);
-    //    System.out.printf("[");
-    //    for(int i: caminho){
-    //        System.out.printf(" %d ", i);
-     //   }
-    //    System.out.printf("]");
-    //}
-    
     int id;
     Arvore[] filhos;
    
@@ -25,7 +16,6 @@ public class Arvore {
         this.filhos = filhos;
 
     }
-    
     
     public static Arvore criaArvore(){
         
